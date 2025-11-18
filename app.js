@@ -12,6 +12,38 @@ app.get('/req', (req, res) => {
     res.send('Yo!')
 })
 
+app.get('/meunome', (req, res) => {
+    res.send('Pedro Henrique Morão da Silva')
+})
+
+app.get('/tico', (req, res) => {
+    res.send('teco')
+})
+
+app.get('/pokemons', (req, res) => {
+    res.json({
+        pokemon1: 'pikachu',
+        pokemon2: 'butterfree',
+        pokemon3: 'pidgeot',
+        pokemon4: 'bulbasaur',
+        pokemon5: 'charmander',
+        pokemon6: 'squirtle',
+        pokemon7: 'kingler',
+        pokemon8: 'primeape',
+        pokemon9: 'muk',
+        pokemon10: 'tauros'
+    })
+})
+
+app.post('/series', (req, res) => {
+    const nome = req.body.nome
+    const nome2 = req.body.nome2
+    const nome3 = req.body.nome3
+    res.json({
+        message: `Top 3 séries ${nome}, ${nome2}, ${nome3}!`
+    })
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
